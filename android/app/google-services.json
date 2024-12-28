@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "799657836317",
+    "project_id": "llmproject-29836",
+    "storage_bucket": "llmproject-29836.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:799657836317:android:0e520beec30633ebe7ebf4",
+        "android_client_info": {
+          "package_name": "com.model_verse.llm_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuvpjz5Itkm3Cnr6kKWf-nlaio0mx4RLs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

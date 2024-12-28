@@ -1,0 +1,53 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin" // Flutter Gradle Plugin
+    id 'com.google.gms.google-services'    // Google services for Firebase
+}
+
+dependencies {
+    // Import the Firebase BoM
+    implementation platform('com.google.firebase:firebase-bom:33.5.1')
+
+    // Firebase Analytics
+    implementation 'com.google.firebase:firebase-analytics'
+
+    // Add other Firebase dependencies as needed
+    // implementation 'com.google.firebase:firebase-auth' // Example for Firebase Auth
+    // implementation 'com.google.firebase:firebase-firestore' // Example for Firestore
+}
+
+android {
+    namespace = "com.example.llm_project"
+    compileSdkVersion 34             // Replace with your target compile SDK version
+    ndkVersion = flutter.ndkVersion   // Ensure this is defined in the project build file
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"  // Specify as a string for compatibility
+    }
+
+    defaultConfig {
+        applicationId = "com.model_verse.llm_project"
+        minSdkVersion 23                // Specify min SDK version
+        targetSdkVersion 35             // Specify target SDK version
+        versionCode flutter.versionCode
+        versionName flutter.versionName
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.debug  // Only for testing; create a release signingConfig for production
+            minifyEnabled true                // Disable code shrinking for now
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+flutter {
+    source = "../.."
+}
