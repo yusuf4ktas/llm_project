@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:llm_project/screens/wrapper.dart';
 
 class LandingScreen extends StatefulWidget {
   const LandingScreen({super.key});
@@ -72,7 +73,7 @@ class _LandingScreenState extends State<LandingScreen> {
                     padding: EdgeInsets.all(25.0),
                     child: ElevatedButton.icon(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/authenticate');
+                        Navigator.pushNamed(context, '/wrapper');
                       },
                       icon: Icon(
                         Icons.arrow_forward_outlined,

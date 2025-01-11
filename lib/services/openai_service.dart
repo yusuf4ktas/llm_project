@@ -4,28 +4,43 @@ class OpenAIService {
   final String apiKey;
 
   OpenAIService(this.apiKey) {
-    // Initialize the OpenAI instance with the provided API key
     OpenAI.apiKey = apiKey;
   }
 
-  Future<String> chat(prompt) async {
+  Future<String> chat(String prompt) async {
     try {
-      // Create a chat completion
       final response = await OpenAI.instance.chat.create(
         model: "gpt-3.5-turbo",
         messages: [
           OpenAIChatCompletionChoiceMessageModel(
-            role: OpenAIChatMessageRole.user, // Correct role as a string
-            content: prompt, // User's input prompt
+            role: OpenAIChatMessageRole.user,
+            content: [
+              OpenAIChatCompletionChoiceMessageContentItemModel.text(prompt)
+            ],
           ),
         ],
       );
 
-      // Return the content of the first choice
-      return (response.choices.first.message.content) as String;
+      return response.choices.first.message.content as String;
     } catch (e) {
-      // Catch and return errors
-      return "";
+      return "Error: ${e.toString()}";
+    }
+  }
+
+
+  // Image Generation using DALL·E
+  Future<String> generateImage(String prompt) async {
+    try {
+      final response = await OpenAI.instance.image.create(
+        model: "dall-e-3",
+        prompt: prompt,
+        n: 1,
+        size: OpenAIImageSize.size1024,
+      );
+
+      return response.data.first.url ?? 'No image generated.';
+    } catch (e) {
+      return 'Error generating image: $e';
     }
   }
 }

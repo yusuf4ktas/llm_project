@@ -11,14 +11,9 @@ class DatabaseService {
   final CollectionReference llmUserCollection =
   FirebaseFirestore.instance.collection('llm_users');
 
-  // Update user data with API keys
-  Future<void> updateUserData(String name, String openAIKey, String geminiKey, String mistralKey,
-      int numberOfKeys) async {
+  Future<void> updateUserData(String name, int numberOfKeys) async {
     return await llmUserCollection.doc(uid).set({
       'name': name,
-      'openAIKey': openAIKey,
-      'geminiKey': geminiKey,
-      'mistralKey': mistralKey,
       'numberOfKeys': numberOfKeys,
     });
   }
@@ -28,9 +23,6 @@ class DatabaseService {
     return snapshot.docs.map((doc) {
       return LLMUser(
         name: doc['name'] ?? '',
-        openAIKey: doc['openAIKey'] ?? '',
-        geminiKey: doc['geminiKey'] ?? '',
-        mistralKey: doc['mistralKey'] ?? '',
         numberOfKeys: doc['numberOfKeys'] ?? 0,
       );
     }).toList();
@@ -42,9 +34,6 @@ class DatabaseService {
     return UserData(
       uid: uid!,
       name: data?['name'] ?? '',
-      openAIKey: data?['openAIKey'] ?? '',
-      geminiKey: data?['geminiKey'] ?? '',
-      mistralKey: data?['mistralKey'] ?? '',
       numberOfKeys: data?['numberOfKeys'] ?? 0,
     );
   }

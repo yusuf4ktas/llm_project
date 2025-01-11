@@ -6,11 +6,12 @@ plugins {
 }
 
 dependencies {
-    // Import the Firebase BoM
-    implementation platform('com.google.firebase:firebase-bom:33.5.1')
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.1.4'
+    implementation platform('com.google.firebase:firebase-bom:33.7.0')
+    implementation 'com.google.firebase:firebase-auth'
+    implementation 'com.google.firebase:firebase-firestore'
+    implementation 'com.google.android.gms:play-services-auth:21.3.0'  // Update to latest
 
-    // Firebase Analytics
-    implementation 'com.google.firebase:firebase-analytics'
 
     // Add other Firebase dependencies as needed
     // implementation 'com.google.firebase:firebase-auth' // Example for Firebase Auth
@@ -23,6 +24,7 @@ android {
     ndkVersion = flutter.ndkVersion   // Ensure this is defined in the project build file
 
     compileOptions {
+        coreLibraryDesugaringEnabled true
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
