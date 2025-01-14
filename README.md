@@ -16,13 +16,13 @@ ModelVerse is a Flutter-based chat application that integrates multiple Large La
 <div align="center" style="display: flex; justify-content: center; gap: 20px;">
   <div style="padding: 15px;">
     <a href="https://imgbb.com/">
-      <img src="https://i.ibb.co/gjWGtQV/1-Landing-Page.png" alt="Landing Page" width="300" height="600" style="border-radius: 15px;"/>
+      <img src="https://i.ibb.co/gjWGtQV/1-Landing-Page.png" alt="Landing Page" width="200" height="400" style="border-radius: 15px;"/>
     </a>
     <a href="https://imgbb.com/">
-      <img src="https://i.ibb.co/Vj8t4Yt/4-Home-Page.png" alt="Home Page" width="300" height="600" style="border-radius: 15px;"/>
+      <img src="https://i.ibb.co/Vj8t4Yt/4-Home-Page.png" alt="Home Page" width="200" height="400" style="border-radius: 15px;"/>
     </a>
     <a href="https://imgbb.com/">
-      <img src="https://i.ibb.co/vH6NBPp/7-Chat-Screen.png" alt="Chat Screen" width="300" height="600" style="border-radius: 15px;"/>
+      <img src="https://i.ibb.co/vH6NBPp/7-Chat-Screen.png" alt="Chat Screen" width="200" height="400" style="border-radius: 15px;"/>
     </a>
    </div>
 </div>
