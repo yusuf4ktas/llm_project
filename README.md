@@ -34,8 +34,8 @@ ModelVerse is a Flutter-based chat application that integrates multiple Large La
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/your-username/modelverse.git
-   cd modelverse
+   git clone https://github.com/yusuf4ktas/llm_project.git
+   cd llm_project
    ```
 
 2. **Install Dependencies:**
